@@ -26,7 +26,7 @@ bot.on("message", message => {
             user.send("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n**Join the new giveaway server!**\nhttps://discord.gg/yNnQpHEn6S\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
             break
         default:
-            message.channel.send("**Nézd meg weboldalunkat: Hamarosan...**")
+            message.channel.send("**Nézd meg weboldalunkat: https://asdasd35.github.io/doggybot**")
             break
     }
 })
