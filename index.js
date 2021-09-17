@@ -2,6 +2,8 @@ const Discord = require('discord.js')
 const bot = new Discord.Client()
  
 const prefix = "do"
+
+bot.login(process.env.BOT_TOKEN)
  
 bot.on("ready", () => {
     console.log("Bejelentkezve: " + bot.user.tag)
