@@ -3,8 +3,6 @@ const bot = new Discord.Client()
  
 const prefix = "do"
  
-bot.login("ODYwMTEyMDUxMzgwMjg5NTc2.YN2fxQ.wcB686ygBn0LpHOi0l6qOkgmcg8")
- 
 bot.on("ready", () => {
     console.log("Bejelentkezve: " + bot.user.tag)
     bot.user.setActivity("DOGGY", { type: "WATCHING" })
