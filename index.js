@@ -8,7 +8,7 @@ bot.login(process.env.BOT_TOKEN)
  
 bot.on("ready", () => {
     console.log("Bejelentkezve: " + bot.user.tag)
-    bot.user.setActivity("DOGGY", { type: "WATCHING" })
+    bot.user.setActivity("asdasd35.github.io/doggybot", { type: "WATCHING" })
 })
  
 bot.on("message", message => {
