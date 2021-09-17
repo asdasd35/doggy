@@ -1,3 +1,4 @@
+  
 const Discord = require('discord.js')
 const bot = new Discord.Client()
  
@@ -25,7 +26,7 @@ bot.on("message", message => {
             user.send("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n**Join the new giveaway server!**\nhttps://discord.gg/yNnQpHEn6S\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
             break
         default:
-            message.channel.send("**Mindenki doggy-t a chatbe!**")
+            message.channel.send("**Nézd meg weboldalunkat: Hamarosan...**")
             break
     }
 })
