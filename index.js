@@ -25,7 +25,7 @@ bot.on("message", message => {
             let user = message.mentions.users.first()
             user.send("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n**Join the new giveaway server!**\nhttps://discord.gg/yNnQpHEn6S\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
             break
-        case "kick":
+        case "ggykick":
             if (!message.mentions.members.first()) { message.channel.send("Nem említettél meg senkit!"); return }
             if (!message.member.hasPermission("KICK_MEMBERS")) { message.channel.send("Nincs ehhez jogod!"); return }
             if (!message.mentions.members.first().kickable) { message.channel.send("Őt nem tudom kickelni!"); return }
