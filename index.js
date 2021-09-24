@@ -59,6 +59,7 @@ bot.on("message", message => {
             break
         case "ggyhelp":
           message.channel.send("**Parancsok:\ndoggy (Az alap parancs)\ndoggykick [@név] [indok] (Kickel)\ndoggyban [@név] [indok] (Bannol)\ndoggydelete [mennyiség] (Üzenetet töröl)\ndoggyinfo [@név] (Infórmációk)**")
+            break
         default:
             message.channel.send("**Ismeretlen parancs! Parancsok listája: doggyhelp\nWeboldal: https://asdasd35.github.io/doggybot**")
             break
