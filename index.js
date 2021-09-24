@@ -8,7 +8,7 @@ bot.login(process.env.BOT_TOKEN)
  
 bot.on("ready", () => {
     console.log("Bejelentkezve: " + bot.user.tag)
-    bot.user.setActivity("asdasd35.github.io/doggybot", { type: "WATCHING" })
+    bot.user.setActivity("doggyhelp", { type: "WATCHING" })
 })
  
 bot.on("message", message => {
@@ -25,8 +25,39 @@ bot.on("message", message => {
             let user = message.mentions.users.first()
             user.send("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n**Join the new giveaway server!**\nhttps://discord.gg/yNnQpHEn6S\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
             break
+                case "kick":
+            if (!message.mentions.members.first()) { message.channel.send("Nem említettél meg senkit!"); return }
+            if (!message.member.hasPermission("KICK_MEMBERS")) { message.channel.send("Nincs ehhez jogod!"); return }
+            if (!message.mentions.members.first().kickable) { message.channel.send("Őt nem tudom kickelni!"); return }
+            message.mentions.members.first().kick()
+            message.channel.send("Kickelve!")
+            break
+        case "ban":
+            if (!message.mentions.members.first()) { message.channel.send("Nem említettél meg senkit!"); return }
+            if (!message.member.hasPermission("BAN_MEMBERS")) { message.channel.send("Nincs ehhez jogod!"); return }
+            if (!message.mentions.members.first().bannable) { message.channel.send("Őt nem tudom kickelni!"); return }
+            message.mentions.members.first().ban()
+            message.channel.send("Bannolva!")
+            break
+        case "nuke":
+            if (!args[1] || isNaN(args[1])) { db = 1 } else { db = Number(args[1]) }
+            if (!message.member.hasPermission("ADMINISTRATOR")) { message.channel.send("Ehhez nincs jogod!"); return }
+            message.channel.bulkDelete(db + 1)
+            message.channel.send(db + " üzenet törölve!")
+            break
+        case "info":
+            if (message.mentions.members.first()) { member = message.mentions.members.first() } else { member = message.member }
+            msg = new Discord.MessageEmbed()
+                .setTitle(member.roles.highest.name + " | " + member.displayName)
+                .setColor(member.displayHexColor)
+                .setThumbnail(member.user.displayAvatarURL())
+                .addField("Rangok", member.roles.cache.array().join(", "))
+                .addField("Csatlakozás", member.joinedAt)
+                .addField("Fiók létrehozása", member.user.createdAt)
+                .setFooter("doggyinfo")
+            message.channel.send(msg)
         default:
-            message.channel.send("**Nézd meg weboldalunkat: https://asdasd35.github.io/doggybot**")
+            message.channel.send("**Ismeretlen parancs! Parancsok listája: doggyhelp\nWeboldal: https://asdasd35.github.io/doggybot**")
             break
     }
 })
