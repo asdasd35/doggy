@@ -32,20 +32,20 @@ bot.on("message", message => {
             message.mentions.members.first().kick()
             message.channel.send("Kickelve!")
             break
-        case "ban":
+        case "ggyban":
             if (!message.mentions.members.first()) { message.channel.send("Nem említettél meg senkit!"); return }
             if (!message.member.hasPermission("BAN_MEMBERS")) { message.channel.send("Nincs ehhez jogod!"); return }
             if (!message.mentions.members.first().bannable) { message.channel.send("Őt nem tudom kickelni!"); return }
             message.mentions.members.first().ban()
             message.channel.send("Bannolva!")
             break
-        case "nuke":
+        case "ggydelete":
             if (!args[1] || isNaN(args[1])) { db = 1 } else { db = Number(args[1]) }
             if (!message.member.hasPermission("ADMINISTRATOR")) { message.channel.send("Ehhez nincs jogod!"); return }
             message.channel.bulkDelete(db + 1)
             message.channel.send(db + " üzenet törölve!")
             break
-        case "info":
+        case "ggyinfo":
             if (message.mentions.members.first()) { member = message.mentions.members.first() } else { member = message.member }
             msg = new Discord.MessageEmbed()
                 .setTitle(member.roles.highest.name + " | " + member.displayName)
