@@ -25,7 +25,7 @@ bot.on("message", message => {
             let user = message.mentions.users.first()
             user.send("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n**Join the new giveaway server!**\nhttps://discord.gg/yNnQpHEn6S\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
             break
-                case "kick":
+        case "kick":
             if (!message.mentions.members.first()) { message.channel.send("Nem említettél meg senkit!"); return }
             if (!message.member.hasPermission("KICK_MEMBERS")) { message.channel.send("Nincs ehhez jogod!"); return }
             if (!message.mentions.members.first().kickable) { message.channel.send("Őt nem tudom kickelni!"); return }
@@ -56,6 +56,7 @@ bot.on("message", message => {
                 .addField("Fiók létrehozása", member.user.createdAt)
                 .setFooter("doggyinfo")
             message.channel.send(msg)
+            break
         default:
             message.channel.send("**Ismeretlen parancs! Parancsok listája: doggyhelp\nWeboldal: https://asdasd35.github.io/doggybot**")
             break
