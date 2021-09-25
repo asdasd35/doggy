@@ -35,7 +35,7 @@ bot.on("message", message => {
         case "ggyban":
             if (!message.mentions.members.first()) { message.channel.send("Nem említettél meg senkit!"); return }
             if (!message.member.hasPermission("BAN_MEMBERS")) { message.channel.send("Nincs ehhez jogod!"); return }
-            if (!message.mentions.members.first().bannable) { message.channel.send("Őt nem tudom kickelni!"); return }
+            if (!message.mentions.members.first().bannable) { message.channel.send("Őt nem tudom bannolni!"); return }
             message.mentions.members.first().ban()
             message.channel.send("Bannolva!")
             break
