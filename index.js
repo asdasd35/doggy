@@ -53,7 +53,7 @@ bot.on("message", message => {
         case "ggygvend":
             if (!message.member.hasPermission("ADMINISTRATOR")) { message.channel.send("Ehhez nincs jogod!"); return }
             const gvend = bot.channels.cache.find(channel => channel.id === "878973316646453258");
-            gvend.send("**Vége a nyereményjátéknak!**\n\n**Nyertes:** __@asdasd35#1830__")
+            gvend.send("**Vége a nyereményjátéknak!**\n\n**Nyertes:** <@656899126838951950>")
             break
         case "ggyhelp":
             message.channel.send("**Parancsok:\ndoggy (Az alap parancs)\ndoggykick [@név] [indok] (Kickel)\ndoggyban [@név] [indok] (Bannol)\ndoggydelete [mennyiség] (Üzenetet töröl)**")
