@@ -45,17 +45,12 @@ bot.on("message", message => {
             message.channel.bulkDelete(db + 1)
             message.channel.send(db + " üzenet törölve!")
             break
-        case "doggygv":
+        case "ggygv":
             if (!message.member.hasPermission("ADMINISTRATOR")) { message.channel.send("Ehhez nincs jogod!"); return }
-            msg = new Discord.MessageEmbed()
-                .setTitle("Nyereményjáték")
-                .addField("Teszt")
-                .addField("Reagálj az emotikonnal!")
-                .addField("Lejár: 2022.07.25")
-            message.channel.send(msg)
+            message.channel.send("               **Nyereményjáték**\nNyeremény: Discord nitro 1 hónap\nVéget ér: 2022.07.25\n\nReagálj az emotikonnal!")
             break
         case "ggyhelp":
-          message.channel.send("**Parancsok:\ndoggy (Az alap parancs)\ndoggykick [@név] [indok] (Kickel)\ndoggyban [@név] [indok] (Bannol)\ndoggydelete [mennyiség] (Üzenetet töröl)\ndoggyinfo [@név] (Infórmációk)**")
+          message.channel.send("**Parancsok:\ndoggy (Az alap parancs)\ndoggykick [@név] [indok] (Kickel)\ndoggyban [@név] [indok] (Bannol)\ndoggydelete [mennyiség] (Üzenetet töröl)**")
             break
         default:
             message.channel.send("**Ismeretlen parancs! Parancsok listája: doggyhelp\nWeboldal: https://asdasd35.github.io/doggybot**")
