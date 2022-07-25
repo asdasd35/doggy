@@ -47,7 +47,7 @@ bot.on("message", message => {
             break
         case "ggygv":
             if (!message.member.hasPermission("ADMINISTRATOR")) { message.channel.send("Ehhez nincs jogod!"); return }
-            message.channel.send("               **Nyereményjáték**\nNyeremény: Discord nitro 1 hónap\nVéget ér: 2022.07.25\n\nReagálj az emotikonnal!")
+            message.channel.send("               **Nyereményjáték**\n\n__Nyeremény:__ Discord nitro 1 hónap\n__Véget ér:__ 2022.07.25\n\n**Reagálj az emotikonnal!**")
             break
         case "ggyhelp":
           message.channel.send("**Parancsok:\ndoggy (Az alap parancs)\ndoggykick [@név] [indok] (Kickel)\ndoggyban [@név] [indok] (Bannol)\ndoggydelete [mennyiség] (Üzenetet töröl)**")
