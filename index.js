@@ -10,8 +10,6 @@ bot.on("ready", () => {
     console.log("Bejelentkezve: " + bot.user.tag)
     bot.user.setActivity("doggyhelp", { type: "WATCHING" })
 })
- 
-const hirek = bot.channels.cache.find(channel => channel.id === "878973316646453258");
 
 bot.on("message", message => {
     if (!message.content.startsWith(prefix) || message.author.bot) { return }
@@ -49,11 +47,13 @@ bot.on("message", message => {
             break
         case "ggygv":
             if (!message.member.hasPermission("ADMINISTRATOR")) { message.channel.send("Ehhez nincs jogod!"); return }
-            hirek.send("**Nyereményjáték**\n\n__Nyeremény:__ Discord nitro 1 hónap\n__Véget ér:__ 2022.07.25\n\n**Reagálj az emotikonnal!**")
+            const gv = bot.channels.cache.find(channel => channel.id === "878973316646453258");
+            gv.send("**Nyereményjáték**\n\n__Nyeremény:__ Discord nitro 1 hónap\n__Véget ér:__ 2022.07.25\n\n**Reagálj az emotikonnal!**")
             break
         case "ggygvend":
             if (!message.member.hasPermission("ADMINISTRATOR")) { message.channel.send("Ehhez nincs jogod!"); return }
-            hirek.send("**Vége a nyereményjátéknak!**\n\n**Nyertes:** __@asdasd35#1830__")
+            const gvend = bot.channels.cache.find(channel => channel.id === "878973316646453258");
+            gvend.send("**Vége a nyereményjátéknak!**\n\n**Nyertes:** __@asdasd35#1830__")
             break
         case "ggyhelp":
             message.channel.send("**Parancsok:\ndoggy (Az alap parancs)\ndoggykick [@név] [indok] (Kickel)\ndoggyban [@név] [indok] (Bannol)\ndoggydelete [mennyiség] (Üzenetet töröl)**")
