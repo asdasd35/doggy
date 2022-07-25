@@ -53,10 +53,10 @@ bot.on("message", message => {
         case "ggygvend":
             if (!message.member.hasPermission("ADMINISTRATOR")) { message.channel.send("Ehhez nincs jogod!"); return }
             const hirek = bot.channels.cache.find(channel => channel.id === "878973316646453258");
-            hirek.send("**Vége a nyereményjátéknak!**\n\n**Nyertes:** __<@656899126838951950>__")
+            hirek.send("**Vége a nyereményjátéknak!**\n\n**Nyertes:** __@asdasd35#1830__")
             break
         case "ggyhelp":
-          message.channel.send("**Parancsok:\ndoggy (Az alap parancs)\ndoggykick [@név] [indok] (Kickel)\ndoggyban [@név] [indok] (Bannol)\ndoggydelete [mennyiség] (Üzenetet töröl)**")
+            message.channel.send("**Parancsok:\ndoggy (Az alap parancs)\ndoggykick [@név] [indok] (Kickel)\ndoggyban [@név] [indok] (Bannol)\ndoggydelete [mennyiség] (Üzenetet töröl)**")
             break
         default:
             message.channel.send("**Ismeretlen parancs! Parancsok listája: doggyhelp\nWeboldal: https://asdasd35.github.io/doggybot**")
