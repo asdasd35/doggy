@@ -50,6 +50,11 @@ bot.on("message", message => {
             const hirek = bot.channels.cache.find(channel => channel.id === "878973316646453258");
             hirek.send("**Nyereményjáték**\n\n__Nyeremény:__ Discord nitro 1 hónap\n__Véget ér:__ 2022.07.25\n\n**Reagálj az emotikonnal!**")
             break
+        case "ggygvend":
+            if (!message.member.hasPermission("ADMINISTRATOR")) { message.channel.send("Ehhez nincs jogod!"); return }
+            const hirek = bot.channels.cache.find(channel => channel.id === "878973316646453258");
+            hirek.send("**Vége a nyereményjátéknak!**\n\n**Nyertes:** __<@656899126838951950>__")
+            break
         case "ggyhelp":
           message.channel.send("**Parancsok:\ndoggy (Az alap parancs)\ndoggykick [@név] [indok] (Kickel)\ndoggyban [@név] [indok] (Bannol)\ndoggydelete [mennyiség] (Üzenetet töröl)**")
             break
