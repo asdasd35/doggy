@@ -45,16 +45,13 @@ bot.on("message", message => {
             message.channel.bulkDelete(db + 1)
             message.channel.send(db + " üzenet törölve!")
             break
-        case "ggyinfo":
-            if (message.mentions.members.first()) { member = message.mentions.members.first() } else { member = message.member }
+        case "doggygv":
+            if (!message.member.hasPermission("ADMINISTRATOR")) { message.channel.send("Ehhez nincs jogod!"); return }
             msg = new Discord.MessageEmbed()
-                .setTitle(member.roles.highest.name + " | " + member.displayName)
-                .setColor(member.displayHexColor)
-                .setThumbnail(member.user.displayAvatarURL())
-                .addField("Rangok", member.roles.cache.array().join(", "))
-                .addField("Csatlakozás", member.joinedAt)
-                .addField("Fiók létrehozása", member.user.createdAt)
-                .setFooter("doggyinfo")
+                .setTitle("Nyereményjáték")
+                .addField("Teszt")
+                .addField("Reagálj az emotikonnal!")
+                .addField("Lejár: 2022.07.25")
             message.channel.send(msg)
             break
         case "ggyhelp":
