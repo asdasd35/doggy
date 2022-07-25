@@ -52,7 +52,6 @@ bot.on("message", message => {
             break
         case "ggygvend":
             if (!message.member.hasPermission("ADMINISTRATOR")) { message.channel.send("Ehhez nincs jogod!"); return }
-            const hirek = bot.channels.cache.find(channel => channel.id === "878973316646453258");
             hirek.send("**Vége a nyereményjátéknak!**\n\n**Nyertes:** __@asdasd35#1830__")
             break
         case "ggyhelp":
