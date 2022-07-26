@@ -48,10 +48,7 @@ bot.on("message", message => {
         case "ggygv":
             if (!message.member.hasPermission("ADMINISTRATOR")) { message.channel.send("Ehhez nincs jogod!"); return }
             const gv = bot.channels.cache.find(channel => channel.id === "878973316646453258");
-            const msgg = gv.send("**Nyereményjáték**\n\n__Nyeremény:__ Discord nitro 1 hónap\n__Véget ér:__ 2022.07.25\n\n**Reagálj az emotikonnal!**");
-            const reactions = [];
-            msgg.send
-            msgg.react('816456695966466109')
+            gv.send("**Nyereményjáték**\n\n__Nyeremény:__ Discord nitro 1 hónap\n__Véget ér:__ 2022.07.25\n\n**Reagálj az emotikonnal!**");
             break
         case "ggygvend":
             if (!message.member.hasPermission("ADMINISTRATOR")) { message.channel.send("Ehhez nincs jogod!"); return }
