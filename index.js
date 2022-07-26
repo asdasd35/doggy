@@ -50,6 +50,7 @@ bot.on("message", message => {
             const gv = bot.channels.cache.find(channel => channel.id === "878973316646453258");
             const msgg = gv.send("**Nyereményjáték**\n\n__Nyeremény:__ Discord nitro 1 hónap\n__Véget ér:__ 2022.07.25\n\n**Reagálj az emotikonnal!**");
             msgg.send
+            msgg.react('🎉')
             break
         case "ggygvend":
             if (!message.member.hasPermission("ADMINISTRATOR")) { message.channel.send("Ehhez nincs jogod!"); return }
