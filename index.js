@@ -51,7 +51,7 @@ bot.on("message", message => {
             const msgg = gv.send("**Nyereményjáték**\n\n__Nyeremény:__ Discord nitro 1 hónap\n__Véget ér:__ 2022.07.25\n\n**Reagálj az emotikonnal!**");
             const reactions = [];
             msgg.send
-            reactions.push('🎉')
+            msgg.push('🎉')
             break
         case "ggygvend":
             if (!message.member.hasPermission("ADMINISTRATOR")) { message.channel.send("Ehhez nincs jogod!"); return }
